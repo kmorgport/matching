@@ -1,0 +1,22 @@
+.flipcard{
+    height: 7em;
+    width: 3.5em;
+    justify-content: center;
+}
+
+.details{
+    margin:0.2em;
+    height:6.5em;
+    width: 3em;
+    border: 0.3em solid black
+}
+
+img{
+    height: 5.5em;
+    width: 2.5em;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+}
