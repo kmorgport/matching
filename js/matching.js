@@ -14,3 +14,15 @@ function writeDoc(stuff){
 fetch(letters)
     .then(data=>data.json())
     .then(data=> console.log(data));
+
+const cards = document.querySelectorAll('[data-card]')
+
+cards.forEach(card=>{
+    card.addEventListener('click',()=>{
+        if(!card.hasAttribute('flip')){
+            card.setAttribute('class', 'flip')
+        }else if(card.hasAttribute('flip')){
+            card.removeAttribute('flip')
+        }
+    })
+})

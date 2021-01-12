@@ -1,19 +1,19 @@
 .flipcard{
-    height: 7em;
-    width: 3.5em;
+    height: 6em;
+    width: 3em;
     justify-content: center;
 }
 
 .details{
     margin:0.2em;
-    height:6.5em;
-    width: 3em;
+    height:5.5em;
+    width: 2.5em;
     border: 0.3em solid black
 }
 
 img{
-    height: 5.5em;
-    width: 2.5em;
+    height: 4.5em;
+    width: 2em;
 }
 
 .row{
@@ -21,3 +21,66 @@ img{
     justify-content: space-between;
     margin: 0.5em;
 }
+
+.col-3{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/*entire container keeps perspective*/
+.flip-container{
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/*.flip-container .selected .flipper, .flip-container .selected .flipper{*/
+/*    transform: rotateY(180deg);*/
+/*}*/
+.flip-container .flip .back{
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+/* flip the pane when has "flip" class which is added on click*/
+.flip-container .flip .front{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+/*flip speed goes here*/
+.flipper{
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out;
+
+    position: relative;
+}
+/*hide back of bane during swap*/
+.front, .back{
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all .6s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front{
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back{
+    -webkit-transform: rotateY(-180deg);
+    transform:rotateY(180deg);
+}
+
