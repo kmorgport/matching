@@ -36,20 +36,20 @@ img{
     transform-style: preserve-3d;
 }
 
-/*.flip-container .selected .flipper, .flip-container .selected .flipper{*/
-/*    transform: rotateY(180deg);*/
-/*}*/
-.flip-container .flip .back{
-    -webkit-transform: rotateY(0deg);
-    -moz-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-}
-/* flip the pane when has "flip" class which is added on click*/
-.flip-container .flip .front{
-    -webkit-transform: rotateY(180deg);
-    -moz-transform: rotateY(180deg);
+.flip-container.clicked .flipper, .flip-container.clicked .flipper{
     transform: rotateY(180deg);
 }
+/*.flip-container .flip .back{*/
+/*    -webkit-transform: rotateY(0deg);*/
+/*    -moz-transform: rotateY(0deg);*/
+/*    transform: rotateY(0deg);*/
+/*}*/
+/*!* flip the pane when has "flip" class which is added on click*!*/
+/*.flip-container .flip .front{*/
+/*    -webkit-transform: rotateY(180deg);*/
+/*    -moz-transform: rotateY(180deg);*/
+/*    transform: rotateY(180deg);*/
+/*}*/
 
 /*flip speed goes here*/
 .flipper{

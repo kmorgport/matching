@@ -17,12 +17,16 @@ fetch(letters)
 
 const cards = document.querySelectorAll('[data-card]')
 
-cards.forEach(card=>{
-    card.addEventListener('click',()=>{
-        if(!card.hasAttribute('flip')){
-            card.setAttribute('class', 'flip')
-        }else if(card.hasAttribute('flip')){
-            card.removeAttribute('flip')
-        }
-    })
-})
+// cards.forEach(card=>{
+//     card.addEventListener('click',()=>{
+//         let front = card.getElementsByTagName('div')[0]
+//         let back = card.getElementsByTagName('div')[1]
+//         if(!card.hasAttribute('flip')){
+//             card.setAttribute('class', 'flip')
+//             front.setAttribute('class','flip')
+//         }else if(front.hasAttribute('flip')){
+//             front.removeAttribute('flip')
+//             back.setAttribute('class','flip')
+//         }
+//     })
+// })
