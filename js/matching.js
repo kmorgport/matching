@@ -15,18 +15,30 @@ fetch(letters)
     .then(data=>data.json())
     .then(data=> console.log(data));
 
-const cards = document.querySelectorAll('[data-card]')
+const row = document.getElementById("row")
+function createCard(){
+    const flipContainer = document.createElement('div');
+    flipContainer.setAttribute('class','col-3 flip-container');
+    flipContainer.setAttribute('onclick','this.classList.toggle(\'clicked\');')
+    const flipper = document.createElement('div');
+    flipper.setAttribute('class','flipper flipcard border border-dark rounded')
+    const front = document.createElement('div');
+    front.setAttribute('class','front details rounded')
+    const frontImage = document.createElement('div');
+    frontImage.setAttribute('class','frontImage')
+    //frontImage.html something front (default image)
+    front.appendChild(frontImage)
+    const back = document.createElement('div');
+    back.setAttribute('class','back details rounded')
+    const backImage = document.createElement('div');
+    backImage.setAttribute('class','backImage')
+    //backImage.innerHtml is image (unique image)
+    back.appendChild(backImage);
+    flipper.appendChild(front)
+    flipper.appendChild(back)
+    flipContainer.appendChild(flipper)
+    row.appendChild(flipContainer)
+}
 
-// cards.forEach(card=>{
-//     card.addEventListener('click',()=>{
-//         let front = card.getElementsByTagName('div')[0]
-//         let back = card.getElementsByTagName('div')[1]
-//         if(!card.hasAttribute('flip')){
-//             card.setAttribute('class', 'flip')
-//             front.setAttribute('class','flip')
-//         }else if(front.hasAttribute('flip')){
-//             front.removeAttribute('flip')
-//             back.setAttribute('class','flip')
-//         }
-//     })
-// })
+
+// `
