@@ -11,17 +11,15 @@ function writeDoc(stuff){
     document.close()
 }
 // writeDoc(data)
-fetch(letters)
-    .then(data=>data.json())
-    .then(data=> console.log(data));
 
 const row = document.getElementById("row")
-function createCard(){
+function createCard(jsondeck, cardNum){
     const flipContainer = document.createElement('div');
     flipContainer.setAttribute('class','col-3 flip-container');
     flipContainer.setAttribute('onclick','this.classList.toggle(\'clicked\');')
     const flipper = document.createElement('div');
     flipper.setAttribute('class','flipper flipcard border border-dark rounded')
+    flipper.setAttribute('class', jsondeck[cardNum].name)
     const front = document.createElement('div');
     front.setAttribute('class','front details rounded')
     const frontImage = document.createElement('div');
@@ -32,6 +30,9 @@ function createCard(){
     back.setAttribute('class','back details rounded')
     const backImage = document.createElement('div');
     backImage.setAttribute('class','backImage')
+    const img = document.createElement('img')
+    img.src = jsondeck[cardNum].img;
+    backImage.appendChild(img)
     //backImage.innerHtml is image (unique image)
     back.appendChild(backImage);
     flipper.appendChild(front)
@@ -40,5 +41,23 @@ function createCard(){
     row.appendChild(flipContainer)
 }
 
+function countOccurrence(arr,val){
+    return arr.filter(v=>(v===val)).length
+}
+function buildDeck(json){
+    console.log(json)
+    let deck = [];
+    while(deck.length<27){
+        let rando = Math.random() * (15);
+        if(countOccurrence(deck,rando)<2){
+            deck.push(rando)
+            createCard(json, rando)
+        }
+    }
+}
 
-// `
+fetch(letters)
+    .then(data=>data.json())
+    .then(data=>
+        buildDeck(data)
+    )

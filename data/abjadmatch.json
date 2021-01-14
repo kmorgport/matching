@@ -1,32 +1,47 @@
 [{"id": 0,
+  "name": "alep",
   "img": "img/alep.png"
 },{"id": 1,
+  "name": "bet",
   "img": "img/bet.png"
 },{"id": 2,
+  "name": "giml",
   "img": "img/giml.png"
 },{"id": 3,
+  "name": "dalet",
   "img": "img/dalet.png"
 },{"id": 4,
+  "name": "het",
   "img": "img/he.png"
 },{"id": 5,
+  "name": "waw",
   "img": "img/waw.png"
 },{"id": 6,
+  "name": "het",
   "img": "img/het.png"
 },{"id": 7,
+  "name": "tet",
   "img": "img/tet.png"
 },{"id": 8,
+  "name": "yod",
   "img": "img/yod.png"
 },{"id": 9,
+  "name": "kep",
   "img": "img/kap.png"
 },{"id": 10,
+  "name": "lamed",
   "img": "img/lamed.png"
 },{"id": 11,
+  "name": "mem",
   "img": "img/mem.png"
 },{"id": 12,
+  "name": "nun",
   "img": "img/nun.png"
 },{"id": 13,
+  "name": "samek",
   "img": "img/samek.png"
 },{"id": 14,
+  "name": "ayin",
   "img": "img/ayin.png"
 }
 ]
