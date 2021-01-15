@@ -47,24 +47,45 @@ function buildDeck(json){
     gameDeck.map(card=>createCard(json,card))
 }
 
-function clickey(arr){
-    arr.forEach(card=>{
-        card.addEventListener('click',()=>{
-            console.log(card)
+function clickCard(input){
+    let checkMatch = [];
+    if(checkMatch.length>2){
+        checkMatch = [];
+    }
+        arr.forEach(card => {
+            card.addEventListener('click', () => {
+                checkMatch.push(card.attributes[0].nodeValue)
+            })
         })
-    })
+}
+
+function compareMatch(arr){
+    if(arr.length<1)return
+    if(arr.length>2){
+        arr = []
+    }
+    console.log(arr)
+    if(arr[0]===arr[1]){
+        console.log('match')
+    }
 }
 
 fetch(letters)
     .then(data=>data.json())
     .then(data=>{
         buildDeck(data)
-            const cards = [...document.getElementsByClassName('col-3')]
-        console.log(cards)
-        clickey(cards)
+            let cards = [...document.getElementsByClassName('col-3')]
+        return cards}
+    ).then(data=>{
+        let checkMatch = [];
+        data.forEach(card=>{
+            card.addEventListener('click',()=>{
+                checkMatch.push(card.attributes[0].nodeValue)
+                compareMatch(checkMatch)
+            })
+        })
+})
 
-}
-    )
 
 
 // const cards = document.getElementsByClassName('col-3')
@@ -77,4 +98,11 @@ fetch(letters)
 //         console.log(child)
 //         }
 //     )
+// })
+
+
+// arr.forEach(card => {
+//     card.addEventListener('click', () => {
+//         checkMatch.push(card.attributes[0].nodeValue)
+//     })
 // })
