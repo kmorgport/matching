@@ -60,10 +60,7 @@ function clickCard(input){
 }
 
 function compareMatch(arr){
-    if(arr.length<1)return
-    if(arr.length>2){
-        arr = []
-    }
+    if(arr.length!==2)return
     console.log(arr)
     if(arr[0]===arr[1]){
         console.log('match')
@@ -81,6 +78,10 @@ fetch(letters)
         data.forEach(card=>{
             card.addEventListener('click',()=>{
                 checkMatch.push(card.attributes[0].nodeValue)
+                if(checkMatch.length>2){
+                    checkMatch = []
+                    checkMatch.push(card.attributes[0].nodeValue)
+                }
                 compareMatch(checkMatch)
             })
         })
